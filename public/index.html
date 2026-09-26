@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberSecurity Academy LMS | Platform Pembelajaran & Virtual Lab Siber</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Cyber Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="cyber-nav">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" onclick="event.preventDefault(); App.handleLogoClick();">
+        <div class="brand-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div>
+          <span>CYBER<span style="color:var(--accent-cyan);">SEKORITY</span></span>
+          <span class="brand-badge">NIST/BSSN</span>
+        </div>
+      </a>
+
+      <!-- Right Nav Area: User Info or Login/Register buttons -->
+      <div class="nav-links" id="nav-user-area">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Dynamic Content Workspace -->
+  <main class="container" id="main-content" style="padding-top: 30px; padding-bottom: 60px;">
+    <!-- Views rendered by app.js (Landing, Student Portal, Teacher Portal) -->
+    <div style="text-align:center; padding:60px 0; color:var(--text-muted);">
+      <i class="fa-solid fa-circle-notch fa-spin fa-2x"></i>
+      <p style="margin-top:14px;">Menginisialisasi Sistem LMS Cyber Security...</p>
+    </div>
+  </main>
+
+  <!-- Global Modal Dialog System -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-title">Judul Modal</h3>
+        <button class="modal-close" onclick="App.closeModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Modal content injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div id="toast-container"></div>
+
+  <!-- Footer -->
+  <footer style="border-top:1px solid var(--border-color); background:var(--bg-secondary); padding:26px 0; text-align:center; font-size:0.85rem; color:var(--text-muted); position:relative; z-index:1; margin-top:auto;">
+    <div class="container">
+      <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:12px; font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan);">
+        <span><i class="fa-solid fa-shield"></i> NIST SP 800-181</span>
+        <span><i class="fa-solid fa-check-double"></i> BSSN RI GUIDELINES</span>
+        <span><i class="fa-solid fa-bug"></i> OWASP TOP 10</span>
+        <span><i class="fa-solid fa-crosshairs"></i> MITRE ATT&CK ENTERPRISE</span>
+        <span><i class="fa-solid fa-database"></i> SQLite Database</span>
+      </div>
+      <p style="margin-bottom:6px; color:#cbd5e1; font-weight:500;">
+        © 2026 <strong>CyberSecurity Academy LMS</strong>. Hak Cipta Dilindungi Undang-Undang.
+      </p>
+      <p style="margin:0; font-size:0.85rem; color:#94a3b8;">
+        Dibuat &amp; Dikembangkan oleh: <strong style="color:var(--accent-cyan); font-weight:600;"><i class="fa-solid fa-laptop-code"></i> Adiningtyas Yuli Purwanto, S.Kom</strong> (Lead Developer &amp; Security Platform Architect)
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/labs.js"></script>
+  <script src="/js/student.js"></script>
+  <script src="/js/teacher.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

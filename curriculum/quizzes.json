@@ -1,0 +1,651 @@
+[
+  {
+    "module_code": "CS-101",
+    "question": "Dalam model CIA Triad, pilar manakah yang terlanggar jika seorang penyerang berhasil mengubah catatan nilai ujian siswa di database sekolah tanpa terdeteksi?",
+    "options": [
+      "Confidentiality (Kerahasiaan)",
+      "Integrity (Integritas)",
+      "Availability (Ketersediaan)",
+      "Authentication (Otentikasi)"
+    ],
+    "correct_index": 1,
+    "explanation": "Integritas (Integrity) berfokus pada jaminan bahwa data tidak mengalami manipulasi, perubahan, atau perusakan yang tidak sah."
+  },
+  {
+    "module_code": "CS-101",
+    "question": "Serangan Distributed Denial of Service (DDoS) yang membanjiri server dengan jutaan paket palsu sehingga website lumpuh merupakan pelanggaran langsung terhadap aspek:",
+    "options": [
+      "Non-Repudiation",
+      "Confidentiality",
+      "Availability (Ketersediaan)",
+      "Authorization"
+    ],
+    "correct_index": 2,
+    "explanation": "DDoS bertujuan membuat layanan tidak dapat diakses oleh pengguna yang berhak, sehingga menyerang pilar Availability."
+  },
+  {
+    "module_code": "CS-101",
+    "question": "Apa perbedaan mendasar antara enkripsi (encryption) dan hashing dalam konteks kriptografi?",
+    "options": [
+      "Enkripsi bersifat satu arah (one-way), sedangkan hashing dapat didekripsi kembali dengan kunci rahasia",
+      "Enkripsi bersifat dua arah (dapat didekripsi dengan kunci yang tepat), sedangkan hashing bersifat satu arah (matematis tidak dapat dibalik)",
+      "Hashing hanya digunakan untuk file gambar, sedangkan enkripsi untuk teks",
+      "Enkripsi tidak memerlukan kunci, sedangkan hashing membutuhkan sertifikat SSL"
+    ],
+    "correct_index": 1,
+    "explanation": "Enkripsi dirancang untuk dapat didekripsi kembali oleh penerima yang memiliki kunci sah, sedangkan fungsi hashing adalah fungsi satu arah (one-way) yang menghasilkan representasi unik dari data untuk verifikasi integritas."
+  },
+  {
+    "module_code": "CS-101",
+    "question": "Berdasarkan amanat UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP) Pasal 46, berapa batas waktu maksimal bagi Pengendali Data untuk menyampaikan pemberitahuan tertulis saat terjadi kebocoran data pribadi (Data Breach)?",
+    "options": [
+      "Paling lambat 24 Jam",
+      "Paling lambat 3 x 24 Jam",
+      "Paling lambat 7 x 24 Jam",
+      "Paling lambat 30 Hari kalender"
+    ],
+    "correct_index": 1,
+    "explanation": "Pasal 46 UU PDP mewajibkan pemberitahuan tertulis disampaikan dalam waktu paling lambat 3 x 24 jam kepada lembaga pengawas pelindungan data pribadi dan subjek data pribadi."
+  },
+  {
+    "module_code": "CS-101",
+    "question": "Apakah prinsip dasar paling fundamental dari paradigma Zero Trust Architecture (NIST SP 800-207)?",
+    "options": [
+      "Mempercayai seluruh perangkat yang terhubung melalui kabel LAN internal kantor",
+      "\"Never Trust, Always Verify\" — setiap permintaan akses wajib diverifikasi secara kontinu tanpa memandang lokasi jaringan",
+      "Menonaktifkan seluruh koneksi internet publik dari datacenter",
+      "Menggunakan satu password administrator bersama yang sangat panjang"
+    ],
+    "correct_index": 1,
+    "explanation": "Zero Trust mengasumsikan sistem telah ditembus (Assume Breach) dan menegakkan prinsip \"Never Trust, Always Verify\" pada setiap sesi dan request data."
+  },
+  {
+    "module_code": "CS-101",
+    "question": "Mengapa dalam arsitektur protokol TLS 1.3 modern, enkripsi simetris (AES-256-GCM / ChaCha20) digunakan untuk transmisi data utama setelah pertukaran kunci asimetris selesai?",
+    "options": [
+      "Karena algoritma simetris jauh lebih cepat dan hemat daya komputasi untuk volume data besar dibandingkan algoritma asimetris",
+      "Karena algoritma asimetris tidak dapat mengenkripsi file teks",
+      "Karena enkripsi simetris tidak membutuhkan kunci rahasia sama sekali",
+      "Karena algoritma asimetris dilarang oleh standar keamanan perbankan internasional"
+    ],
+    "correct_index": 0,
+    "explanation": "Enkripsi asimetris (RSA/ECC) membutuhkan komputasi matematika yang sangat berat sehingga hanya digunakan untuk jabat tangan (handshake/key exchange). Setelah kunci sesi simetris disepakati, data massal dienkripsi dengan algoritma simetris yang sangat cepat."
+  },
+
+  {
+    "module_code": "CS-102",
+    "question": "Protokol manakah yang TIDAK mengenkripsi komunikasi data dan mengirimkan password secara teks terbuka (plaintext) sehingga rawan disadap dengan Wireshark?",
+    "options": ["SSH (Port 22)", "Telnet (Port 23)", "HTTPS (Port 443)", "SFTP (Port 22)"],
+    "correct_index": 1,
+    "explanation": "Telnet mengirimkan seluruh sesi dalam bentuk plaintext, sehingga siapa pun di jaringan lokal dapat membaca username dan password secara langsung menggunakan packet sniffer."
+  },
+  {
+    "module_code": "CS-102",
+    "question": "Pada proses koneksi TCP 3-Way Handshake, urutan pengiriman flag paket yang benar dari Klien ke Server dan sebaliknya adalah:",
+    "options": ["ACK -> SYN -> SYN-ACK", "SYN -> SYN-ACK -> ACK", "SYN -> ACK -> RST", "FIN -> ACK -> FIN-ACK"],
+    "correct_index": 1,
+    "explanation": "Urutan standar TCP 3-Way Handshake adalah Klien kirim SYN -> Server jawab SYN-ACK -> Klien konfirmasi ACK."
+  },
+  {
+    "module_code": "CS-102",
+    "question": "Bagaimana teknik Nmap SYN Stealth Scan (-sS) dapat memindai port terbuka tanpa tercatat sebagai sesi lengkap pada log aplikasi target?",
+    "options": [
+      "Dengan mengirimkan paket ICMP Ping berkecepatan tinggi",
+      "Dengan mengirimkan paket RST (Reset) seketika setelah menerima SYN-ACK dari server sehingga jabat tangan ke-3 tidak diselesaikan",
+      "Dengan mengenkripsi paket scan menggunakan protokol HTTPS",
+      "Dengan mengubah alamat MAC scanner menjadi alamat MAC default gateway"
+    ],
+    "correct_index": 1,
+    "explanation": "SYN Stealth Scan tidak menyelesaikan handshake ketiga (ACK). Begitu server membalas SYN-ACK (tanda port open), Nmap langsung mengirim RST untuk menutup koneksi seketika."
+  },
+  {
+    "module_code": "CS-102",
+    "question": "Manakah port default yang digunakan oleh protokol SMB (Server Message Block) Windows yang dieksploitasi oleh ransomware WannaCry melalui kerentanan EternalBlue (MS17-010)?",
+    "options": ["Port 80", "Port 135", "Port 445", "Port 3389"],
+    "correct_index": 2,
+    "explanation": "Port 445 adalah port default SMB direct-hosted di Windows yang rentan terhadap eksploitasi EternalBlue."
+  },
+  {
+    "module_code": "CS-102",
+    "question": "Manakah aktivitas berikut yang diklasifikasikan sebagai Passive Reconnaissance (OSINT) yang tidak akan memicu alarm pada sensor IDS target?",
+    "options": [
+      "Menjalankan pemindaian port Nmap -p- -A terhadap server target",
+      "Mencari subdomain dan riwayat sertifikat SSL target melalui Certificate Transparency logs (crt.sh) dan Shodan",
+      "Menjalankan skrip vulnerability scanner Nikto terhadap website target",
+      "Melakukan serangan brute-force login SSH"
+    ],
+    "correct_index": 1,
+    "explanation": "Passive Reconnaissance mengumpulkan data dari pihak ketiga (mesin pencari, arsip sertifikat publik, WHOIS) tanpa mengirimkan paket langsung ke server target."
+  },
+  {
+    "module_code": "CS-102",
+    "question": "Opsi Nmap manakah yang digunakan untuk memecah header paket data menjadi fragmen kecil (8 byte) guna menyulitkan pendeteksian signature oleh firewall/IDS?",
+    "options": ["-f", "-sT", "-Pn", "-n"],
+    "correct_index": 0,
+    "explanation": "Opsi -f (packet fragmentation) memecah paket IP menjadi potongan-potongan 8 byte sehingga sensor IDS sulit mencocokkan signature pola serangan utuh."
+  },
+
+  {
+    "module_code": "CS-103",
+    "question": "Jika sebuah berkas memiliki permission numerik 640 (chmod 640), hak akses apakah yang dimiliki oleh Pemilik (User), Grup, dan Lainnya (Others)?",
+    "options": [
+      "Pemilik: Read & Write (rw-), Grup: Read (r--), Others: Tidak ada akses (---)",
+      "Pemilik: Read & Execute (r-x), Grup: Write (-w-), Others: Read (r--)",
+      "Pemilik: Read, Write & Execute (rwx), Grup: Read (r--), Others: Write (-w-)",
+      "Pemilik: Write only (-w-), Grup: Read (r--), Others: Execute (--x)"
+    ],
+    "correct_index": 0,
+    "explanation": "Nilai 6 = 4 (read) + 2 (write); Nilai 4 = 4 (read); Nilai 0 = tidak ada hak akses."
+  },
+  {
+    "module_code": "CS-103",
+    "question": "Berkas di Linux yang menyimpan hash password terenkripsi pengguna sistem dan hanya boleh diakses oleh akun root adalah:",
+    "options": ["/etc/hosts", "/etc/passwd", "/etc/shadow", "/var/log/syslog"],
+    "correct_index": 2,
+    "explanation": "/etc/shadow menyimpan hash password terenkripsi yang dilindungi ketat dan hanya dapat dibaca oleh root, berbeda dengan /etc/passwd yang dapat dibaca oleh seluruh pengguna."
+  },
+  {
+    "module_code": "CS-103",
+    "question": "Apakah dampak keamanan paling berbahaya dari berkas biner yang memiliki bit SUID (Set User ID) aktif milik akun root?",
+    "options": [
+      "Berkas tersebut otomatis terhapus jika terjadi restart sistem",
+      "Saat dieksekusi oleh pengguna biasa mana pun, program tersebut akan berjalan dengan hak istimewa penuh akun root",
+      "Pengguna tidak dapat membaca isi source code program",
+      "Program tersebut tidak dapat dijalankan melalui koneksi SSH"
+    ],
+    "correct_index": 1,
+    "explanation": "SUID menginstruksikan kernel untuk mengeksekusi biner dengan hak pemilik berkas (Owner). Jika pemiliknya adalah root, biner tersebut berjalan dengan privilege root."
+  },
+  {
+    "module_code": "CS-103",
+    "question": "Perintah Linux manakah yang paling akurat untuk mengaudit dan mencari seluruh berkas biner dengan izin SUID di seluruh filesystem?",
+    "options": [
+      "ls -la /root",
+      "find / -perm -u=s -type f 2>/dev/null",
+      "grep -rn \"SUID\" /var/log",
+      "ps aux | grep root"
+    ],
+    "correct_index": 1,
+    "explanation": "Perintah find dengan argumen -perm -u=s mencari berkas reguler (-type f) yang memiliki bit SUID aktif, dan 2>/dev/null menyembunyikan pesan kesalahan Permission Denied."
+  },
+  {
+    "module_code": "CS-103",
+    "question": "Mengapa konfigurasi baris \"student ALL=(ALL) NOPASSWD: /usr/bin/find\" di dalam /etc/sudoers dikategorikan sebagai kerentanan privilege escalation kritis menurut GTFOBins?",
+    "options": [
+      "Karena perintah find mengunci hard disk secara permanen",
+      "Karena user student dapat mengeksekusi shell root melalui parameter: sudo find . -exec /bin/sh -p \\; -quit",
+      "Karena perintah find menghapus direktori /etc/passwd",
+      "Karena sudoers tidak mendukung path direktori /usr/bin"
+    ],
+    "correct_index": 1,
+    "explanation": "Biner find memiliki kemampuan mengeksekusi perintah eksternal via -exec. Jika diberi hak sudo tanpa password, pengguna dapat langsung membuka shell root."
+  },
+  {
+    "module_code": "CS-103",
+    "question": "Dalam pengerasan konfigurasi SSH (/etc/ssh/sshd_config), opsi manakah yang WAJIB dimatikan untuk mencegah login langsung ke akun administrator tertinggi?",
+    "options": [
+      "PermitRootLogin no",
+      "AllowUsers all",
+      "PasswordAuthentication yes",
+      "Port 22"
+    ],
+    "correct_index": 0,
+    "explanation": "PermitRootLogin no melarang pengguna masuk langsung sebagai akun root via SSH, mewajibkan login dengan akun biasa terlebih dahulu kemudian eskalasi via sudo yang diaudit."
+  },
+
+  {
+    "module_code": "CS-201",
+    "question": "Mengapa penggunaan \"Prepared Statements\" (Parameterized Queries) sangat efektif dalam mencegah serangan SQL Injection?",
+    "options": [
+      "Karena Prepared Statements mengenkripsi seluruh database menggunakan algoritma AES-256",
+      "Karena mesin database memisahkan instruksi kode SQL dari data input pengguna, sehingga input diperlakukan sebagai nilai data literal murni",
+      "Karena Prepared Statements mematikan hak akses koneksi database",
+      "Karena Prepared Statements secara otomatis menghapus spasi dari input pengguna"
+    ],
+    "correct_index": 1,
+    "explanation": "Prepared statements memisahkan query kompilasi dari data, sehingga karakter khusus seperti tanda kutip (') atau komentar (--) tidak lagi diinterpretasikan sebagai instruksi SQL."
+  },
+  {
+    "module_code": "CS-201",
+    "question": "Dalam serangan Authentication Bypass pada form login yang rentan SQLi, apa fungsi dari karakter tanda minus ganda (--) pada payload \"admin' --\"?",
+    "options": [
+      "Menghapus akun admin dari sistem",
+      "Mengubah enkripsi password menjadi plaintext",
+      "Mengubah sisa perintah SQL setelahnya menjadi komentar sehingga validasi password diabaikan oleh database",
+      "Melipatgandakan kecepatan query database"
+    ],
+    "correct_index": 2,
+    "explanation": "Karakter -- adalah sintaks komentar dalam SQL standar yang menyebabkan seluruh logika query setelahnya diabaikan oleh mesin basis data."
+  },
+  {
+    "module_code": "CS-201",
+    "question": "Apa dua syarat mutlak yang harus dipenuhi agar serangan UNION-Based SQL Injection berhasil mengekstrak data dari tabel lain?",
+    "options": [
+      "Jumlah kolom query injeksi harus sama persis dengan query asli, dan tipe data antar kolom harus kompatibel",
+      "Server harus menggunakan sistem operasi Linux dan port 3306 terbuka publik",
+      "Pengguna harus login terlebih dahulu sebagai administrator",
+      "Database harus berukuran lebih dari 100 Megabyte"
+    ],
+    "correct_index": 0,
+    "explanation": "Operator UNION mengharuskan jumlah kolom pada statement kedua identik dengan statement pertama, dan tipe data setiap kolom yang berpasangan harus kompatibel."
+  },
+  {
+    "module_code": "CS-201",
+    "question": "Bagaimana seorang penyerang mengeksploitasi kerentanan Time-Based Blind SQL Injection jika aplikasi tidak menampilkan output teks maupun pesan error di layar?",
+    "options": [
+      "Dengan mematikan daya server secara fisik",
+      "Dengan menyuntikkan fungsi penunda waktu seperti SLEEP(5) atau pg_sleep(5) dan mengukur latensi waktu respon server untuk menebak karakter data",
+      "Dengan menelepon tim customer service",
+      "Dengan mengubah alamat IP router korban"
+    ],
+    "correct_index": 1,
+    "explanation": "Time-Based Blind SQLi memanfaatkan waktu respon server. Jika query kondisional benar, database tertidur selama X detik; jika salah, server langsung merespons."
+  },
+  {
+    "module_code": "CS-201",
+    "question": "Teknik SQL Injection manakah yang memaksa database mengirimkan data curian melalui query DNS ke server DNS milik penyerang saat respons HTTP diblokir?",
+    "options": [
+      "In-Band Error Based",
+      "Out-of-Band (OOB) SQL Injection",
+      "Second-Order Stored SQLi",
+      "Reflected XSS"
+    ],
+    "correct_index": 1,
+    "explanation": "Out-of-Band (OOB) SQLi memanfaatkan kemampuan mesin database melakukan lookup jaringan eksternal (seperti resolusi DNS via xp_dirtree di MSSQL) untuk mengekstrak data."
+  },
+  {
+    "module_code": "CS-201",
+    "question": "Manakah prinsip keamanan database yang paling tepat diterapkan untuk membatasi kerusakan jika aplikasi web berhasil dieksploitasi dengan SQL Injection?",
+    "options": [
+      "Menjalankan web server menggunakan akun root / Administrator",
+      "Menerapkan Least Privilege Database User: akun database aplikasi tidak boleh diberi izin DROP TABLE, ALTER, atau akses ke prosedur sistem berbahaya seperti xp_cmdshell",
+      "Menyimpan seluruh data di file teks tanpa password",
+      "Menghapus seluruh backup database berkala"
+    ],
+    "correct_index": 1,
+    "explanation": "Prinsip Least Privilege membatasi hak akses user database aplikasi seminimal mungkin, sehingga penyerang tidak dapat merusak skema tabel atau mengeksekusi shell OS."
+  },
+
+  {
+    "module_code": "CS-202",
+    "question": "Manakah atribut keamanan cookie yang secara efektif mencegah script JavaScript berbahaya mencuri session token pengguna melalui properti document.cookie saat terjadi serangan XSS?",
+    "options": ["SameSite=None", "Secure", "HttpOnly", "Max-Age=3600"],
+    "correct_index": 2,
+    "explanation": "Atribut HttpOnly menginstruksikan browser bahwa cookie tersebut tidak boleh diakses oleh skrip sisi klien (seperti JavaScript document.cookie), sehingga mencegah pembajakan sesi akibat XSS."
+  },
+  {
+    "module_code": "CS-202",
+    "question": "Jenis XSS di mana script berbahaya disimpan secara permanen di dalam basis data aplikasi (misal pada forum komentar) dan menyerang setiap pengunjung yang membuka halaman disebut:",
+    "options": ["Reflected XSS", "Stored XSS (Persistent)", "DOM-Based XSS", "Blind CSRF"],
+    "correct_index": 1,
+    "explanation": "Stored XSS (atau Persistent XSS) adalah varian XSS di mana payload disimpan dalam database target dan dieksekusi berulang kali setiap kali halaman dimuat oleh korban."
+  },
+  {
+    "module_code": "CS-202",
+    "question": "Mengapa serangan Cross-Site Scripting (XSS) dapat melumpuhkan seluruh mekanisme pertahanan token Anti-CSRF pada sebuah aplikasi web?",
+    "options": [
+      "Karena XSS mengenkripsi koneksi SSL korban",
+      "Karena script JavaScript XSS yang berjalan di browser korban dapat membaca nilai token CSRF langsung dari elemen formulir DOM dan mengirimkannya dalam request penyerang",
+      "Karena CSRF token otomatis kedaluwarsa jika ada JavaScript",
+      "Karena XSS mematikan koneksi internet pengguna"
+    ],
+    "correct_index": 1,
+    "explanation": "Karena script XSS berjalan dalam konteks peramban korban (Same-Origin), ia memiliki hak istimewa penuh untuk membaca dokumen DOM, termasuk token CSRF tersembunyi."
+  },
+  {
+    "module_code": "CS-202",
+    "question": "Dalam kerentanan DOM-Based XSS, manakah di bawah ini yang bertindak sebagai \"Sink\" berbahaya yang mengeksekusi input pengguna ke dalam struktur dokumen peramban?",
+    "options": [
+      "location.search",
+      "element.innerHTML",
+      "document.referrer",
+      "window.name"
+    ],
+    "correct_index": 1,
+    "explanation": "element.innerHTML adalah Sink berbahaya karena menafsirkan dan merender string sebagai elemen HTML/JS aktif. location.search dan referrer adalah Source (sumber data)."
+  },
+  {
+    "module_code": "CS-202",
+    "question": "Manakah directive Content Security Policy (CSP Level 3) yang mengizinkan eksekusi script hanya jika tag <script> menyertakan token acak kriptografis unik yang cocok dengan header HTTP server?",
+    "options": [
+      "script-src 'unsafe-inline'",
+      "script-src 'self' 'nonce-rAnd0mToken123'",
+      "default-src *",
+      "frame-ancestors 'none'"
+    ],
+    "correct_index": 1,
+    "explanation": "Nonce-based CSP mengharuskan setiap script memiliki atribut nonce=\"...\" yang nilainya acak dan berganti di setiap HTTP response render halaman, memblokir injeksi script asing."
+  },
+  {
+    "module_code": "CS-202",
+    "question": "Nilai atribut SameSite cookie manakah yang paling ketat melarang peramban mengirimkan cookie pada SELURUH permintaan lintas domain (Cross-Site requests)?",
+    "options": ["SameSite=None", "SameSite=Lax", "SameSite=Strict", "SameSite=Auto"],
+    "correct_index": 2,
+    "explanation": "SameSite=Strict memastikan cookie tidak pernah dikirimkan pada request yang berasal dari situs domain lain, memberikan proteksi maksimal terhadap serangan CSRF."
+  },
+
+  {
+    "module_code": "CS-203",
+    "question": "Apakah isi data dalam bagian Payload dari sebuah JSON Web Token (JWT) terenkripsi secara rahasia secara default?",
+    "options": [
+      "Ya, seluruh isi JWT dienkripsi dengan standar AES-256 tingkat militer sehingga tidak bisa dibaca oleh siapa pun",
+      "Tidak, Payload JWT hanya di-encode menggunakan Base64URL dan dapat dibaca oleh siapa saja; yang melindungi integritasnya hanyalah Signature kriptografi",
+      "Ya, hanya peramban web bersertifikat yang dapat membaca payload tersebut",
+      "Tergantung apakah pengguna menggunakan koneksi Wi-Fi atau kabel LAN"
+    ],
+    "correct_index": 1,
+    "explanation": "JWT Payload hanya di-encode (bukan dienkripsi). Siapa pun dapat mendecode Base64 untuk membaca isinya. Keamanan JWT terletak pada validasi Signature oleh server menggunakan secret key."
+  },
+  {
+    "module_code": "CS-203",
+    "question": "Bagaimana cara penyerang mengeksploitasi kerentanan The \"None\" Algorithm Flaw (CVE-2015-9235) pada verifikasi token JWT di server backend yang salah konfigurasi?",
+    "options": [
+      "Penyerang mematikan koneksi database backend",
+      "Penyerang mengubah header token menjadi {\"alg\": \"none\"}, memanipulasi klaim payload menjadi role admin, dan membuang tanda tangan signature",
+      "Penyerang melakukan serangan fisik ke ruang server",
+      "Penyerang mengirim ribuan email spam"
+    ],
+    "correct_index": 1,
+    "explanation": "Pustaka JWT yang rentan mempercayai header \"alg\": \"none\" dari klien dan melewatkan verifikasi signature, sehingga klaim admin palsu diterima sah oleh server."
+  },
+  {
+    "module_code": "CS-203",
+    "question": "Dalam katalog OWASP API Security Top 10 (2023), kerentanan Broken Object Level Authorization (BOLA / IDOR) terjadi apabila:",
+    "options": [
+      "Server API kehabisan kapasitas memori RAM",
+      "Endpoint API menerima ID objek (misal: /api/orders/105) tanpa memverifikasi apakah pengguna yang sedang login benar-benar berhak atas objek ID tersebut",
+      "API tidak menggunakan format respons JSON",
+      "Server API menggunakan port 443"
+    ],
+    "correct_index": 1,
+    "explanation": "BOLA (sering disebut IDOR) terjadi saat pengguna terautentikasi dapat mengakses atau memanipulasi data milik pengguna lain hanya dengan mengganti parameter ID pada URL/body request."
+  },
+  {
+    "module_code": "CS-203",
+    "question": "Manakah media penyimpanan token JWT di sisi browser klien yang paling direkomendasikan untuk mencegah pencurian token saat terjadi serangan XSS?",
+    "options": [
+      "window.localStorage",
+      "window.sessionStorage",
+      "Cookie dengan atribut HttpOnly, Secure, dan SameSite=Strict",
+      "Menyimpan token di dalam atribut teks elemen HTML"
+    ],
+    "correct_index": 2,
+    "explanation": "localStorage dan sessionStorage rentan dibaca oleh script JavaScript penyerang saat terjadi celah XSS. HttpOnly cookie kebal terhadap akses script JavaScript."
+  },
+  {
+    "module_code": "CS-203",
+    "question": "Mengapa fungsi hash MD5 dan SHA-256 dilarang keras digunakan untuk hashing password pengguna dalam sistem autentikasi modern?",
+    "options": [
+      "Karena keduanya hanya mendukung karakter angka",
+      "Karena keduanya dirancang cepat (fast hashes) sehingga sangat rentan di-brute force miliaran tebakan per detik menggunakan GPU; wajib gunakan fungsi lambat seperti Argon2id atau Bcrypt",
+      "Karena algoritma tersebut memerlukan lisensi berbayar",
+      "Karena database SQLite tidak mendukung fungsi hash"
+    ],
+    "correct_index": 1,
+    "explanation": "Fungsi hash cepat memudahkan penyerang memecahkan password menggunakan rig GPU modern. Algoritma khusus password (Argon2id, Bcrypt, PBKDF2) memiliki work factor yang dapat ditingkatkan agar brute-force tidak memungkinkan secara komputasi."
+  },
+  {
+    "module_code": "CS-203",
+    "question": "Dalam alur otorisasi OAuth 2.0 untuk aplikasi Single Page Application (SPA) dan mobile yang tidak dapat menyimpan client secret secara rahasia, ekstensi protokol apakah yang WAJIB digunakan?",
+    "options": ["HMAC-MD5", "PKCE (Proof Key for Code Exchange)", "Telnet Auth", "Basic Auth"],
+    "correct_index": 1,
+    "explanation": "RFC 7636 mewajibkan implementasi PKCE (Proof Key for Code Exchange) untuk memitigasi intersepsi kode otorisasi pada public clients (SPA dan mobile apps)."
+  },
+
+  {
+    "module_code": "CS-301",
+    "question": "Dalam analisis log web server, jika Anda menemukan pola request \"GET /products.php?id=1%20UNION%20SELECT%20null,username,password%20FROM%20users\", serangan apakah yang sedang dicoba oleh penyerang?",
+    "options": [
+      "Cross-Site Request Forgery (CSRF)",
+      "Union-Based SQL Injection",
+      "SYN Flood Denial of Service",
+      "ARP Cache Poisoning"
+    ],
+    "correct_index": 1,
+    "explanation": "Pola string \"UNION SELECT ... FROM\" adalah karakteristik utama dari serangan Union-Based SQL Injection yang mencoba mengekstrak data dari tabel basis data lain."
+  },
+  {
+    "module_code": "CS-301",
+    "question": "Windows Security Event ID manakah yang mencatat keberhasilan login akun pengguna (Successful Logon), di mana atribut Logon Type-nya sangat penting untuk diinvestigasi oleh analis SOC?",
+    "options": ["Event ID 4624", "Event ID 4625", "Event ID 1102", "Event ID 7045"],
+    "correct_index": 0,
+    "explanation": "Event ID 4624 mencatat Successful Logon. Logon Type 2 menandakan login interaktif lokal, Type 3 network/SMB, dan Type 10 menandakan koneksi Remote Desktop (RDP)."
+  },
+  {
+    "module_code": "CS-301",
+    "question": "Pada alat pemantau Microsoft Sysmon, Event ID 1 memiliki fungsi vital bagi threat hunter untuk melacak:",
+    "options": [
+      "Process Creation (Pembuatan proses biner baru lengkap dengan argumen baris perintah dan parent process-nya)",
+      "Kerusakan fisik kabel jaringan",
+      "Pembersihan cache browser",
+      "Pemberian alamat IP DHCP"
+    ],
+    "correct_index": 0,
+    "explanation": "Sysmon Event ID 1 mencatat eksekusi setiap proses di sistem operasi secara mendalam, termasuk hash biner, direktori kerja, user, dan baris perintah (CommandLine) lengkap."
+  },
+  {
+    "module_code": "CS-301",
+    "question": "Format deskripsi aturan deteksi berbasis file YAML yang bersifat terbuka (open-source) dan dapat dikonversi secara otomatis ke berbagai platform SIEM (Splunk, QRadar, Sentinel) disebut:",
+    "options": ["Sigma Rules", "JSON Schema", "HTML5 Markup", "CSS Stylesheet"],
+    "correct_index": 0,
+    "explanation": "Sigma adalah standar generic signature format untuk SIEM yang memungkinkan komunitas keamanan siber berbagi logika deteksi ancaman tanpa terikat pada vendor tertentu."
+  },
+  {
+    "module_code": "CS-301",
+    "question": "Berdasarkan konsep Piramida Rasa Sakit (David Bianco's Pyramid of Pain), indikator ancaman manakah yang paling sulit dan paling menyakitkan bagi penyerang jika berhasil dinetralkan oleh tim SOC?",
+    "options": [
+      "Nilai Hash SHA-256 Malware",
+      "Alamat IP Server C2",
+      "Nama Domain Server Penyerang",
+      "TTPs (Taktik, Teknik, dan Prosedur Penyerang)"
+    ],
+    "correct_index": 3,
+    "explanation": "TTPs berada di puncak piramida karena jika teknik penyerang terbongkar dan diblokir, penyerang harus mempelajari kembali atau mengubah seluruh metodologi serangan mereka dari awal."
+  },
+  {
+    "module_code": "CS-301",
+    "question": "Dalam operasional harian SOC, tahapan awal seorang analis Tier 1 ketika menerima tiket alarm dari sistem SIEM adalah melakukan \"Triage\", yang bertujuan untuk:",
+    "options": [
+      "Menghapus seluruh baris log dari database",
+      "Memvalidasi apakah alarm tersebut merupakan True Positive (ancaman nyata) atau False Positive (alarm palsu akibat aktivitas bisnis normal) sebelum dieskalasi",
+      "Mematikan firewall kantor secara menyeluruh",
+      "Menulis ulang kode aplikasi web dari awal"
+    ],
+    "correct_index": 1,
+    "explanation": "Triage adalah proses penyaringan cepat untuk memverifikasi kebenaran alarm guna menghindari \"alert fatigue\" dan memastikan hanya ancaman riil yang dieskalasi ke Tier 2."
+  },
+
+  {
+    "module_code": "CS-302",
+    "question": "Mengapa Web Application Firewall (WAF) dibutuhkan selain firewall jaringan konvensional (Layer 3/4)?",
+    "options": [
+      "Karena WAF meningkatkan kecepatan download internet hingga 10 kali lipat",
+      "Karena firewall jaringan biasa tidak dapat memeriksa isi muatan payload di Layer 7 (seperti SQLi dan XSS pada traffic HTTP/HTTPS)",
+      "Karena WAF berfungsi menggantikan sistem operasi server",
+      "Karena firewall jaringan tidak membutuhkan konfigurasi IP address"
+    ],
+    "correct_index": 1,
+    "explanation": "Firewall jaringan konvensional hanya memfilter berdasarkan IP dan Port (Layer 3/4), sedangkan WAF memeriksa payload konten aplikasi web di Layer 7."
+  },
+  {
+    "module_code": "CS-302",
+    "question": "Apa perbedaan fundamental antara Stateful Inspection Firewall dibandingkan Stateless Packet Filter?",
+    "options": [
+      "Stateful firewall memelihara tabel status koneksi aktif (State Table) sehingga dapat otomatis mengizinkan paket respon balasan yang sah",
+      "Stateless firewall jauh lebih aman dan memeriksa payload Layer 7",
+      "Stateful firewall tidak memerlukan daya listrik",
+      "Stateless firewall hanya berjalan pada jaringan wireless"
+    ],
+    "correct_index": 0,
+    "explanation": "Stateful firewall melacak status setiap sesi komunikasi (ESTABLISHED, RELATED) di memori kernel, sehingga tidak perlu membuat aturan dua arah terpisah untuk paket balasan."
+  },
+  {
+    "module_code": "CS-302",
+    "question": "Dalam subsistem Netfilter Linux (iptables), chain bawaan manakah yang bertugas memproses paket data yang ditujukan langsung ke mesin lokal host itu sendiri?",
+    "options": ["Chain FORWARD", "Chain INPUT", "Chain OUTPUT", "Chain PREROUTING"],
+    "correct_index": 1,
+    "explanation": "Chain INPUT pada tabel filter memproses paket yang memiliki alamat IP tujuan mesin lokal server itu sendiri."
+  },
+  {
+    "module_code": "CS-302",
+    "question": "Mengapa konfigurasi Default-Deny Policy (seperti \"iptables -P INPUT DROP\") merupakan standar emas dalam desain arsitektur keamanan firewall?",
+    "options": [
+      "Karena menghentikan seluruh aktivitas jaringan selamanya",
+      "Karena memblokir seluruh paket secara default dan hanya membuka port layanan yang secara eksplisit diizinkan, meminimalkan attack surface",
+      "Karena mempercepat koneksi Wi-Fi",
+      "Karena menghemat penggunaan bandwidth internet kantor"
+    ],
+    "correct_index": 1,
+    "explanation": "Prinsip Default-Deny memastikan bahwa port layanan baru yang mungkin tidak sengaja terbuka tidak akan terekspos ke internet publik kecuali diizinkan secara eksplisit oleh admin."
+  },
+  {
+    "module_code": "CS-302",
+    "question": "Perbedaan mendasar dalam mode penempatan sistem antara Intrusion Detection System (IDS) dan Intrusion Prevention System (IPS) adalah:",
+    "options": [
+      "IDS ditempatkan di luar jalur (out-of-line) secara pasif untuk merekam dan memberi alert, sedangkan IPS ditempatkan di dalam jalur (in-line) aktif memblokir paket berbahaya",
+      "IPS tidak dapat mendeteksi malware",
+      "IDS menggunakan kabel fiber, sedangkan IPS menggunakan kabel telepon",
+      "Keduanya adalah perangkat keras yang sama persis tanpa perbedaan mode"
+    ],
+    "correct_index": 0,
+    "explanation": "IDS memonitor salinan traffic via SPAN/TAP port tanpa mengganggu aliran data, sedangkan IPS berada langsung di jalur komunikasi paket sehingga dapat membuang (drop) paket serangan secara real-time."
+  },
+  {
+    "module_code": "CS-302",
+    "question": "Dalam arsitektur Zero-Trust Network Defense, apa tujuan utama dari penerapan Micro-segmentation di lingkungan data center?",
+    "options": [
+      "Membagi hard disk server menjadi partisi kecil",
+      "Mengisolasi setiap beban kerja (workload) dan virtual machine sehingga penyerang yang berhasil menembus satu server tidak dapat bergerak leluasa ke server lain (mencegah lateral movement)",
+      "Menghilangkan penggunaan kabel LAN",
+      "Menghapus seluruh akun pengguna selain admin"
+    ],
+    "correct_index": 1,
+    "explanation": "Micro-segmentation memecah jaringan datar (flat network) menjadi zona-zona mikro terisolasi ketat, sehingga pembobolan satu server tidak membahayakan server lain di datacenter."
+  },
+
+  {
+    "module_code": "CS-401",
+    "question": "Berdasarkan prinsip \"Order of Volatility\" (RFC 3227), komponen manakah yang harus diakuisisi terlebih dahulu sebelum mematikan komputer target?",
+    "options": [
+      "Hard disk drive cadangan",
+      "Data di memori kerja (RAM) dan cache sistem",
+      "Kertas cetak dokumen laporan",
+      "Pita magnetik arsip tahunan"
+    ],
+    "correct_index": 1,
+    "explanation": "RAM adalah memori volatil yang datanya akan langsung lenyap seketika begitu daya listrik terputus, sehingga harus didahulukan dibanding disk permanen."
+  },
+  {
+    "module_code": "CS-401",
+    "question": "Mengapa penyidik forensik digital wajib menggunakan perangkat keras \"Hardware Write Blocker\" saat menghubungkan media penyimpanan bukti ke stasiun kerja forensik?",
+    "options": [
+      "Untuk mempercepat kecepatan transfer USB 3.0",
+      "Untuk mencegah stasiun forensik menulis atau memodifikasi data pada media penyimpanan bukti asli meskipun hanya 1 byte",
+      "Untuk menghapus virus secara otomatis",
+      "Untuk mengenkripsi hard disk bukti"
+    ],
+    "correct_index": 1,
+    "explanation": "Hardware write blocker secara fisik memutus jalur sinyal instruksi tulis (write) ke disk target, menjamin integritas bukti fisik tidak terkontaminasi oleh sistem operasi investigator."
+  },
+  {
+    "module_code": "CS-401",
+    "question": "Dokumen kronologis resmi yang mencatat secara ketat siapa yang menyita, mengangkut, menyimpan, dan menganalisis bukti digital beserta nilai hash SHA-256 awalnya disebut:",
+    "options": ["Surat Jalan Bukti", "Chain of Custody", "Sertifikat Garansi", "Non-Disclosure Agreement"],
+    "correct_index": 1,
+    "explanation": "Chain of Custody membuktikan integritas dan asal-usul bukti digital tanpa celah agar sah dan dapat diterima oleh hakim di persidangan (Admissible Evidence)."
+  },
+  {
+    "module_code": "CS-401",
+    "question": "Dalam analisis memori RAM menggunakan framework Volatility 3, plugin manakah yang digunakan untuk memindai injeksi kode memori mencurigakan (seperti Process Hollowing) dengan izin alokasi PAGE_EXECUTE_READWRITE?",
+    "options": ["windows.malfind", "windows.info", "windows.driverscan", "windows.filescan"],
+    "correct_index": 0,
+    "explanation": "Plugin windows.malfind memindai area memori tersembunyi yang memiliki atribut eksekusi dan penulisan aktif secara bersamaan, mendeteksi injeksi shellcode/DLL."
+  },
+  {
+    "module_code": "CS-401",
+    "question": "Mengapa artefak sistem berkas NTFS $MFT (Master File Table) sangat berharga untuk membongkar teknik manipulasi stempel waktu (Timestomping) oleh penyerang?",
+    "options": [
+      "Karena $MFT menyimpan seluruh file dalam format terenkripsi AES",
+      "Karena atribut $FILE_NAME yang dikelola otomatis oleh kernel NTFS mencatat stempel waktu pembuatan asli yang tidak dapat diubah oleh tool manipulasi waktu standar penyerang",
+      "Karena $MFT otomatis mengirim email ke administrator",
+      "Karena $MFT hanya berisi file gambar"
+    ],
+    "correct_index": 1,
+    "explanation": "Penyerang sering memanipulasi atribut $STANDARD_INFORMATION agar tanggal file terlihat lawas, namun atribut $FILE_NAME menyimpan stempel waktu otentik yang membongkar trik timestomping."
+  },
+  {
+    "module_code": "CS-401",
+    "question": "Teknik pencarian dan rekonstruksi berkas yang telah dihapus dari ruang disk mentah (unallocated space) berdasarkan tanda tangan biner byte awal (Header) dan byte akhir (Footer) disebut:",
+    "options": ["File Carving", "Data Mining", "SQL Injection", "Port Scanning"],
+    "correct_index": 0,
+    "explanation": "File Carving (menggunakan tools seperti foremost atau scalpel) mengekstrak file berdasarkan Magic Bytes tanpa bergantung pada sistem berkas (file system metadata)."
+  },
+
+  {
+    "module_code": "CS-402",
+    "question": "Dalam kerangka kerja MITRE ATT&CK, taktik penyerang untuk mempertahankan akses mereka ke dalam sistem meskipun komputer target di-restart atau kredensial awal diubah disebut:",
+    "options": ["Initial Access", "Persistence", "Reconnaissance", "Lateral Movement"],
+    "correct_index": 1,
+    "explanation": "Taktik Persistence (Kegigihan) mencakup teknik-teknik yang digunakan penyerang untuk mempertahankan pijakan mereka di sistem pasca restart atau interupsi."
+  },
+  {
+    "module_code": "CS-402",
+    "question": "Teknik penyerang menggunakan perangkat lunak resmi bawaan sistem operasi (seperti PowerShell atau WMI) untuk mengeksekusi payload tanpa terdeteksi antivirus dikenal dengan istilah:",
+    "options": [
+      "Living off the Land (LotL)",
+      "Brute Force Attack",
+      "Phishing Campaign",
+      "Denial of Service"
+    ],
+    "correct_index": 0,
+    "explanation": "Living off the Land (LotL) memanfaatkan biner bawaan tepercaya (LOLBins) untuk menjalankan aktivitas jahat tanpa perlu mengunduh file biner asing ke disk target."
+  },
+  {
+    "module_code": "CS-402",
+    "question": "Berdasarkan pedoman penanganan insiden NIST SP 800-61 Rev 2 dan panduan CSIRT BSSN, 4 tahapan siklus tanggap insiden secara berurutan adalah:",
+    "options": [
+      "Preparation -> Detection & Analysis -> Containment, Eradication & Recovery -> Post-Incident Activity (Lessons Learned)",
+      "Eradication -> Preparation -> Analysis -> Recovery",
+      "Containment -> Attack -> Recovery -> Close",
+      "Scanning -> Exploitation -> Ransomware -> Report"
+    ],
+    "correct_index": 0,
+    "explanation": "NIST SP 800-61 Rev 2 mendefinisikan 4 fase standar: Persiapan, Deteksi & Analisis, Penahanan/Pembasmian/Pemulihan, dan Evaluasi Pasca-Insiden (Lessons Learned)."
+  },
+  {
+    "module_code": "CS-402",
+    "question": "Langkah pertama yang PALING TEPAT dan WAJIB segera dilakukan oleh tim Incident Response saat sebuah workstation di jaringan terdeteksi aktif terinfeksi ransomware adalah:",
+    "options": [
+      "Mematikan paksa stopkontak listrik komputer",
+      "Mengisolasi koneksi jaringan host secara instan (cabut kabel LAN / putus Wi-Fi) TANPA mematikan daya listrik komputer",
+      "Membayar uang tebusan ke dompet Bitcoin penyerang",
+      "Menghapus seluruh file log audit sistem"
+    ],
+    "correct_index": 1,
+    "explanation": "Isolasi jaringan menghentikan pergerakan lateral ransomware ke komputer lain, sementara membiarkan listrik tetap menyala mempertahankan bukti volatil RAM yang mungkin memuat kunci enkripsi."
+  },
+  {
+    "module_code": "CS-402",
+    "question": "Dalam teknik serangan Pass-the-Hash (MITRE ATT&CK T1550.002), bagaimana cara penyerang melakukan pergerakan lateral (Lateral Movement) ke server Windows lain di domain?",
+    "options": [
+      "Penyerang melakukan autentikasi langsung menggunakan hash NTLM curian tanpa perlu mengetahui password plaintext asli pengguna",
+      "Penyerang memecahkan password menggunakan superkomputer selama 5 tahun",
+      "Penyerang menebak password secara manual pada form login",
+      "Penyerang meretas router pusat ISP"
+    ],
+    "correct_index": 0,
+    "explanation": "Protokol NTLM menerima hash password secara langsung untuk proses jabat tangan autentikasi, sehingga penyerang tidak perlu melakukan cracking password plaintext."
+  },
+  {
+    "module_code": "CS-402",
+    "question": "Dalam konteks Business Continuity & Disaster Recovery (BCP/DR), parameter RTO (Recovery Time Objective) mendefinisikan:",
+    "options": [
+      "Jumlah data transaksi maksimum yang boleh hilang saat bencana",
+      "Target durasi waktu maksimum yang diperbolehkan untuk memulihkan sistem operasional pasca insiden bencana",
+      "Biaya yang harus dibayar kepada vendor asuransi",
+      "Jumlah staf yang boleh libur saat insiden"
+    ],
+    "correct_index": 1,
+    "explanation": "RTO adalah batas waktu pemulihan operasional (misal RTO = 4 jam). RPO (Recovery Point Objective) adalah toleransi usia kehilangan data maksimum (misal RPO = 1 jam data terakhir)."
+  }
+]
