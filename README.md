@@ -93,7 +93,7 @@ Platform Learning Management System (LMS) Keamanan Siber komprehensif tingkat en
 
 ---
 
-## 🚀 Cara Menjalankan Aplikasi
+## 🚀 Cara Menjalankan Aplikasi (Lokal)
 
 1. **Jalankan Server:**
    ```bash
@@ -101,7 +101,85 @@ Platform Learning Management System (LMS) Keamanan Siber komprehensif tingkat en
    ```
 2. **Buka di Peramban Web (Browser):**
    Akses: **`http://localhost:3000`**
-3. **Menjalankan Automated Test Suite (18 Verifikasi Fitur):**
+3. **Menjalankan Automated Test Suite (19 Verifikasi Fitur):**
    ```bash
    npm test
    ```
+
+---
+
+## 🖥️ Panduan Instalasi Manual di Proxmox VE (LXC Container)
+
+> 📖 *Dokumentasi lengkap dan konfigurasi Nginx/SSL tersedia di [PROXMOX_GUIDE.md](PROXMOX_GUIDE.md).*
+
+### 1. Buat Container LXC di Proxmox VE
+- **OS Template:** Debian 12 (Bookworm) 64-bit *(direkomendasikan)* atau Ubuntu 22.04 LTS
+- **Resource:** 1-2 vCPU, RAM 1-2 GB, Disk 10-20 GB, Unprivileged Container
+- **Network:** Static IP (contoh: `192.168.1.150/24`, Gateway: `192.168.1.1`)
+
+### 2. Perintah Instalasi Manual di Console LXC:
+```bash
+# 1. Update sistem & instal paket penting
+apt update && apt upgrade -y
+apt install -y curl git ufw build-essential
+
+# 2. Instal Node.js 22 LTS (Wajib v22+ untuk SQLite native bawaan)
+curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+apt install -y nodejs
+
+# 3. Clone repositori ke /var/www
+mkdir -p /var/www
+cd /var/www
+git clone https://github.com/kajurtkjsmkbp-hub/cyber-sekurity-part1.git
+cd cyber-sekurity-part1
+
+# 4. Setup environment & dependensi
+cp .env.example .env
+npm install --omit=dev
+chmod +x update.sh
+
+# 5. Jalankan menggunakan PM2 (Auto-Start saat Boot)
+npm install -g pm2
+pm2 start ecosystem.config.js
+pm2 save
+pm2 startup
+
+# 6. Buka port firewall
+ufw allow 3000/tcp
+ufw allow 22/tcp
+ufw enable
+```
+*Aplikasi siap diakses di: **`http://<IP-LXC-PROXMOX>:3000`***
+
+---
+
+## 🔄 Perintah Update di Proxmox Saat Ada Perubahan di GitHub
+
+> 🛡️ **Jaminan Database:** File `database.sqlite` diabaikan oleh Git (`.gitignore`). Data siswa, akun guru baru, dan riwayat nilai di Proxmox **TIDAK AKAN PERNAH TERTIMPA ATAU HILANG** saat melakukan update kode.
+
+### Opsi 1: Update Otomatis (1 Perintah Saja)
+```bash
+cd /var/www/cyber-sekurity-part1 && ./update.sh
+```
+*(Script ini otomatis membuat cadangan database ke folder `backups/`, menarik kode terbaru dari GitHub, menginstall dependensi baru jika ada, dan mereload server tanpa downtime).*
+
+### Opsi 2: Update Manual Langkah Demi Langkah
+```bash
+# 1. Masuk ke direktori aplikasi
+cd /var/www/cyber-sekurity-part1
+
+# 2. Backup database SQLite Proxmox sebelum update
+mkdir -p backups
+cp database.sqlite backups/database_backup_$(date +%Y%m%d_%H%M%S).sqlite
+
+# 3. Ambil pembaruan kode terbaru dari GitHub (database aman)
+git fetch origin
+git pull origin main
+
+# 4. Update dependensi jika ada paket baru
+npm install --omit=dev
+
+# 5. Restart server aplikasi
+pm2 reload cyber-lms || pm2 restart cyber-lms
+```
+
