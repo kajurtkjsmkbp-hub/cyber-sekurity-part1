@@ -7,6 +7,7 @@ const API = {
 
     try {
       const response = await fetch(endpoint, {
+        credentials: 'include',
         ...options,
         headers: {
           ...defaultHeaders,
